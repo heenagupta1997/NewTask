@@ -1,0 +1,19 @@
+<section class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row heading mt-5" style="width: 40%;">
+    <div>
+        <div class="container">
+            <div>
+                <strong>Total Balance</strong>
+                <h2>
+                    <strong>{{apiData?.balance?.total_balance | currency: 'USD'}}</strong>
+                </h2>
+                <div>
+                    <mat-progress-bar mode="determinate" [value]=apiData?.balance?.payment_done_percentage ></mat-progress-bar>
+                </div>
+                <span>Monthly Payment Limit</span>
+                <span>{{apiData?.balance?.payment_done_so_far | currency: 'USD'}}/{{apiData?.balance?.monthly_payment_limit | currency: 'USD'}}</span>
+            </div>
+            <app-statistics></app-statistics>
+            <app-transaction-history></app-transaction-history>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,59 @@
+<div>
+    <span>Money Statistics</span>
+    <div style="padding: 5px; vertical-align: super;" class="">
+        <select>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+        </select>
+        <span class="p-0 mt-5">...</span>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="box-row">
+                <div class="box-cell box1">
+                    <p>
+                        Total Income
+                        {{apiData?.money_statistics?.total_income.value | currency: 'USD'}}
+                    </p>
+                   
+                   <strong>
+                    <span [ngStyle]="{'color': apiData?.money_statistics?.total_income.trend_color}">+{{apiData?.money_statistics?.total_income.trend}}%</span>
+                   </strong>
+                   <span>from last month</span>
+                </div>
+
+                <div class="box-cell box2">
+                    <p>
+                        Total Expense
+                        {{apiData?.money_statistics?.total_expense.value | currency: 'USD'}}
+                    </p>
+                    <strong>
+                        <span [ngStyle]="{'color': apiData?.money_statistics?.total_expense.trend_color}">+{{apiData?.money_statistics?.total_expense.trend}}%</span>
+                    </strong>
+                    <span>from last month</span>
+                </div>
+
+                <div class="box-cell box3">
+                    <p>
+                        Total Investment
+                        {{apiData?.money_statistics?.total_investment.value | currency: 'USD'}}
+                    </p>
+                    
+                    <strong>
+                        <span [ngStyle]="{'color': apiData?.money_statistics?.total_investment.trend_color}">+{{apiData?.money_statistics?.total_investment.trend}}%</span>
+                    </strong>
+                    <span>from last month</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <h2>
+        <strong>{{apiData?.money_statistics?.total_balance | currency: 'USD'}}</strong>
+    </h2>
+    <div>
+        <mat-progress-bar mode="determinate" [value]=apiData?.balance?.payment_done_percentage></mat-progress-bar>
+    </div>
+    <span>Monthly Payment Limit</span>
+    <span>{{apiData?.balance?.payment_done_so_far | currency: 'USD'}}/{{apiData?.balance?.monthly_payment_limit |
+        currency: 'USD'}}</span> -->
+</div>

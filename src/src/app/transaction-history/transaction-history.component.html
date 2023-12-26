@@ -1,0 +1,52 @@
+<div class="">
+    <span>Money Statistics</span>
+    <div class="table-responsive exerc-tbl-select" style="width: 70%; height: 500px; overflow-y: scroll;">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="datex">
+                 <th id="datex" mat-header-cell *matHeaderCellDef class="name-width">Date</th>
+                 <td mat-cell class="category-cell" *matCellDef="let data">
+                     {{ data?.date | date: 'mediumDate'}}
+                 </td>
+             </ng-container>
+             <ng-container matColumnDef="name">
+                 <th id="name" mat-header-cell *matHeaderCellDef class="name-width">Name</th>
+                 <td mat-cell class="category-cell" *matCellDef="let data">
+                     {{data?.name}}
+                 </td>
+             </ng-container>
+             <ng-container matColumnDef="status">
+                 <th id="status" mat-header-cell *matHeaderCellDef class="name-width">Status</th>
+                 <td mat-cell class="category-cell" *matCellDef="let data">
+                     {{data?.status}}
+                 </td>
+             </ng-container>
+              <ng-container matColumnDef="type">
+                 <th id="type" mat-header-cell *matHeaderCellDef class="name-width">Type</th>
+                 <td mat-cell class="category-cell" *matCellDef="let data">
+                     {{data?.type}}
+                 </td>
+             </ng-container>
+             <ng-container matColumnDef="time">
+                 <th id="time" mat-header-cell *matHeaderCellDef class="name-width">Time</th>
+                 <td mat-cell class="category-cell" *matCellDef="let data">
+                     {{data?.date | date: 'shortTime' }}
+                 </td>
+             </ng-container>
+             <ng-container matColumnDef="amount">
+                 <th id="amount" mat-header-cell *matHeaderCellDef class="name-width">Amount</th>
+                 <td mat-cell class="category-cell" *matCellDef="let data">
+                     {{data?.amount}}
+                 </td>
+             </ng-container>
+              <ng-container matColumnDef="action">
+                 <th id="action" mat-header-cell *matHeaderCellDef class="name-width">Action</th>
+                 <td mat-cell class="category-cell" *matCellDef="let data">
+                     {{data?.status}}
+                 </td>
+             </ng-container>
+             <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+             <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
+         </table>
+    </div>
+    
+</div>

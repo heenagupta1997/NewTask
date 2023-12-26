@@ -1,0 +1,28 @@
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row heading">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+      <p class="heading-text">Overview</p>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+      <!-- <div class="search-container">
+         <mat-form-field class="search-field">
+           <input matInput placeholder="Search">
+           <button mat-button *ngIf="searchValue" (click)="clearSearch()">
+             <mat-icon>clear</mat-icon>
+           </button>
+         </mat-form-field>
+       </div> -->
+       <ul class="navbar-nav navbar-nav-right flex-row">
+         <li class="nav-item dropdown">
+            <a class="nav-link count-indicator"
+               title="If you want to change the time zone, please go to edit profile" aria-label="Time Zone">
+               <i class="fas fa-clock mx-0" aria-hidden="true"></i>
+            </a>          
+         </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link count-indicator" title="Help" routerLink="/help" aria-label="Help">
+               <i class="fas fa-question-circle mx-0" aria-hidden="true"></i>
+            </a>
+         </li>
+      </ul>
+    </div>
+ </nav>
